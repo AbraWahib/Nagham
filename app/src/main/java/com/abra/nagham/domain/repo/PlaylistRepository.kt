@@ -1,7 +1,7 @@
 package com.abra.nagham.domain.repo
 
-import com.abra.nagham.domain.models.Playlist
-import com.abra.nagham.domain.models.Song
+import com.abra.nagham.domain.models.playlist.Playlist
+import com.abra.nagham.domain.models.music.Song
 import kotlinx.coroutines.flow.Flow
 
 interface PlaylistRepository {
