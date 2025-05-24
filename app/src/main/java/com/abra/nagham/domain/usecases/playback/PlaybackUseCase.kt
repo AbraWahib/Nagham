@@ -16,7 +16,7 @@ class PlaybackUseCase @Inject constructor(
         playbackRepository.setMediaItems(
             mediaItems = songs.map {
                 MediaItem(
-                    id = it.id,
+                    id = it.songId,
                     filePath = it.filePath,
                     title = it.title
                 )

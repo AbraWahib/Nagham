@@ -17,7 +17,7 @@ class MediaStoreDataSource @Inject constructor(
     fun getAllSongs(): Flow<List<Song>> =
         getSongs("${MediaStore.Audio.Media.IS_MUSIC} != 0", null)
 
-    fun getSongsByArtistId(artistId: Long): Flow<List<Song>> =
+    fun getSongsByArtist(artistId: Long): Flow<List<Song>> =
         getSongs(
             "${MediaStore.Audio.Media.IS_MUSIC} != 0 AND ${MediaStore.Audio.Media.ARTIST_ID} = ?",
             arrayOf(artistId.toString())
@@ -57,7 +57,7 @@ class MediaStoreDataSource @Inject constructor(
                 while (cursor.moveToNext()) {
                     songs.add(
                         Song(
-                            id = cursor.getLong(idColumn),
+                            songId = cursor.getLong(idColumn),
                             title = cursor.getString(titleColumn),
                             artistId = cursor.getLong(artistIdColumn),
                             albumId = cursor.getLong(albumIdColumn),
@@ -98,7 +98,7 @@ class MediaStoreDataSource @Inject constructor(
             emit(artists)
         }
     @RequiresApi(Build.VERSION_CODES.Q)
-    fun getAllAlbums(): Flow<List<Artist>> =
+    fun getAllAlbums(): Flow<List<Album>> =
         flow {
             val albums = mutableListOf<Album>()
             val projection = arrayOf(

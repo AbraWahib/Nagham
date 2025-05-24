@@ -1,7 +1,7 @@
 package com.abra.nagham.domain.models.music
 
 data class Song(
-    val id: Long,
+    val songId: Long,
     val title: String,
     val artistId: Long,
     val albumId: Long,

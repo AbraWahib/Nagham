@@ -3,7 +3,6 @@ package com.abra.nagham.data.data_source
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Transaction
 import com.abra.nagham.data.database.entities.PlayListEntity
 import com.abra.nagham.data.database.entities.PlaylistSongEntity
 import com.abra.nagham.data.database.entities.PlaylistWithSongs
@@ -23,11 +22,20 @@ interface PlaylistDao {
     @Query("DELETE FROM playlists WHERE id = :playlistId")
     suspend fun deletePlaylist(playlistId: Long)
 
-    @Transaction
-    @Query("SELECT * FROM playlists")
+    @Query("""
+        SELECT playlists.*, GROUP_CONCAT(playlist_songs.songId) as songIds
+        FROM playlists
+        LEFT JOIN playlist_songs ON playlists.id = playlist_songs.playlistId
+        GROUP BY playlists.id
+    """)
     fun getAllPlaylistsWithSongs(): Flow<List<PlaylistWithSongs>>
 
-    @Transaction
-    @Query("SELECT * FROM playlists WHERE id = :playlistId")
+    @Query("""
+        SELECT playlists.*, GROUP_CONCAT(playlist_songs.songId) as songIds
+        FROM playlists
+        LEFT JOIN playlist_songs ON playlists.id = playlist_songs.playlistId
+        WHERE playlists.id = :playlistId
+        GROUP BY playlists.id
+    """)
     fun getPlaylistWithSongs(playlistId: Long): Flow<PlaylistWithSongs?>
 }
