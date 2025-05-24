@@ -4,9 +4,9 @@ import android.content.ContentResolver
 import android.os.Build
 import android.provider.MediaStore
 import androidx.annotation.RequiresApi
-import com.abra.nagham.domain.models.music.Album
-import com.abra.nagham.domain.models.music.Artist
-import com.abra.nagham.domain.models.music.Song
+import com.abra.nagham.domain.model.music.Album
+import com.abra.nagham.domain.model.music.Artist
+import com.abra.nagham.domain.model.music.Song
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

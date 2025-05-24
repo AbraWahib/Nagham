@@ -1,14 +1,14 @@
 package com.abra.nagham.domain.repo
 
-import com.abra.nagham.domain.models.playlist.Playlist
-import com.abra.nagham.domain.models.music.Song
+import com.abra.nagham.domain.model.playlist.Playlist
+import com.abra.nagham.domain.model.music.Song
 import kotlinx.coroutines.flow.Flow
 
 interface PlaylistRepository {
     fun getAllPlaylists(): Flow<List<Playlist>>
     fun getSongsInPlaylist(playlistId: Long): Flow<List<Song>>
-    fun createPlaylist(name: String): Long
-    fun addSongToPlaylist(playlistId: Long, songId: Long)
-    fun removeSongFromPlaylist(playlistId: Long, songId: Long)
-    fun deletePlaylist(playlistId: Long)
+    suspend fun createPlaylist(name: String): Long
+    suspend fun addSongToPlaylist(playlistId: Long, songId: Long)
+    suspend fun removeSongFromPlaylist(playlistId: Long, songId: Long)
+    suspend fun deletePlaylist(playlistId: Long)
 }

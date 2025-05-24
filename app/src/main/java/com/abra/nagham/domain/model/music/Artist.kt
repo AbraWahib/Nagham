@@ -1,4 +1,4 @@
-package com.abra.nagham.domain.models.music
+package com.abra.nagham.domain.model.music
 
 data class Artist(
     val id: Long,

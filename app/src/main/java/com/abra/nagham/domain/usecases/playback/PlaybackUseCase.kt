@@ -1,7 +1,7 @@
 package com.abra.nagham.domain.usecases.playback
 
-import android.media.session.PlaybackState
-import com.abra.nagham.domain.models.music.Song
+import com.abra.nagham.domain.model.music.Song
+import com.abra.nagham.domain.model.playback.PlaybackState
 import com.abra.nagham.domain.repo.PlaybackRepository
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

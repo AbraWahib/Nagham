@@ -6,7 +6,7 @@ import javax.inject.Inject
 class RemoveSongFromPlaylistUseCase @Inject constructor(
     private val playlistRepository: PlaylistRepository
 ) {
-    operator fun invoke(playlistId: Long, songId: Long) {
+    suspend operator fun invoke(playlistId: Long, songId: Long) {
         playlistRepository.removeSongFromPlaylist(playlistId, songId)
     }
 }

@@ -3,9 +3,9 @@ package com.abra.nagham.data.repo
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.abra.nagham.data.data_source.MediaStoreDataSource
-import com.abra.nagham.domain.models.music.Album
-import com.abra.nagham.domain.models.music.Artist
-import com.abra.nagham.domain.models.music.Song
+import com.abra.nagham.domain.model.music.Album
+import com.abra.nagham.domain.model.music.Artist
+import com.abra.nagham.domain.model.music.Song
 import com.abra.nagham.domain.repo.MusicRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

@@ -1,8 +1,8 @@
 package com.abra.nagham.domain.repo
 
-import com.abra.nagham.domain.models.music.Album
-import com.abra.nagham.domain.models.music.Artist
-import com.abra.nagham.domain.models.music.Song
+import com.abra.nagham.domain.model.music.Album
+import com.abra.nagham.domain.model.music.Artist
+import com.abra.nagham.domain.model.music.Song
 import kotlinx.coroutines.flow.Flow
 
 interface MusicRepository {

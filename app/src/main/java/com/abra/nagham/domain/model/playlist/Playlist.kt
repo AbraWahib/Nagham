@@ -1,4 +1,4 @@
-package com.abra.nagham.domain.models.playlist
+package com.abra.nagham.domain.model.playlist
 
 data class Playlist(
     val id: Long,

@@ -1,4 +1,4 @@
-package com.abra.nagham.domain.models.playback
+package com.abra.nagham.domain.model.playback
 
 data class PlaybackState(
     val currentSongId: Long? = null,
