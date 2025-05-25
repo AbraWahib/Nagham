@@ -1,9 +1,8 @@
 package com.abra.nagham.domain.usecases.playlist_management
 
 import com.abra.nagham.domain.repo.PlaylistRepository
-import javax.inject.Inject
 
-class RemoveSongFromPlaylistUseCase @Inject constructor(
+class RemoveSongFromPlaylistUseCase (
     private val playlistRepository: PlaylistRepository
 ) {
     suspend operator fun invoke(playlistId: Long, songId: Long) {

@@ -4,9 +4,8 @@ import com.abra.nagham.domain.model.music.Song
 import com.abra.nagham.domain.model.playback.PlaybackState
 import com.abra.nagham.domain.repo.PlaybackRepository
 import kotlinx.coroutines.flow.StateFlow
-import javax.inject.Inject
 
-class PlaybackUseCase @Inject constructor(
+class PlaybackUseCase(
     private val playbackRepository: PlaybackRepository
 ) {
     val playbackState: StateFlow<PlaybackState>

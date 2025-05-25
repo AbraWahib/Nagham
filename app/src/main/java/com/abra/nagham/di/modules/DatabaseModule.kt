@@ -1,4 +1,4 @@
-package com.abra.nagham.di
+package com.abra.nagham.di.modules
 
 import android.content.Context
 import androidx.room.Room
@@ -17,12 +17,13 @@ object DatabaseModule {
     @Singleton
     fun provideDataBase(@ApplicationContext context:Context): NaghamDatabase{
         return Room.databaseBuilder(
-            context.applicationContext,
+            context,
             NaghamDatabase::class.java,
             "nagham.db"
         ).build()
     }
     @Provides
     @Singleton
-    fun provideNaghamDao(database: NaghamDatabase) = database.playlistDao()
+    fun providePlaylistDao(database: NaghamDatabase) =
+        database.playlistDao()
 }

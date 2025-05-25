@@ -1,5 +1,6 @@
-package com.abra.nagham.di
+package com.abra.nagham.di.modules
 
+import android.content.ContentResolver
 import android.content.Context
 import androidx.media3.exoplayer.ExoPlayer
 import dagger.Module
@@ -14,16 +15,20 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object PlaybackModule {
+object AppModule {
     @Provides
     @Singleton
-    fun provideExoPlayer(@ApplicationContext context: Context): ExoPlayer {
+    fun provideContentResolver(@ApplicationContext context: Context): ContentResolver{
+        return context.contentResolver
+    }
+    @Provides
+    @Singleton
+    fun provideExoPlayer(@ApplicationContext context: Context): ExoPlayer{
         return ExoPlayer.Builder(context).build()
     }
-
     @Provides
     @Singleton
-    fun provideCoroutineScope(): CoroutineScope {
+    fun provideCoroutineScope(): CoroutineScope{
         return CoroutineScope(Dispatchers.Main + SupervisorJob())
     }
 }
