@@ -1,4 +1,4 @@
-package com.abra.nagham.presentation.viewmodels
+package com.abra.nagham.presentation.playlist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class PlaylistViewModel @Inject constructor(
+class PlaylistsViewModel @Inject constructor(
     private val getAllPlaylistsUseCase: GetAllPlaylistsUseCase,
     private val createPlaylistUseCase: CreatePlaylistUseCase,
     private val addSongToPlaylistUseCase: AddSongToPlaylistUseCase,

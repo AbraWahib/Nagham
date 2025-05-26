@@ -1,4 +1,4 @@
-package com.abra.nagham.presentation.viewmodels
+package com.abra.nagham.presentation.playing
 
 import androidx.lifecycle.ViewModel
 import com.abra.nagham.domain.model.playback.PlaybackState

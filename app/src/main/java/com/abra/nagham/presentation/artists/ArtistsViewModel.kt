@@ -1,4 +1,4 @@
-package com.abra.nagham.presentation.viewmodels
+package com.abra.nagham.presentation.artists
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
