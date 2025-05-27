@@ -14,7 +14,7 @@ fun ArtistsScreen(
     viewModel: ArtistsViewModel = hiltViewModel(),
     onNavigateToArtistDetail: (Long) -> Unit
 ) {
-    val artists = viewModel.artists.collectAsState().value
+    val artistsWithDetails = viewModel.artistsWithDetails.collectAsState().value
 
     Scaffold { padding ->
         LazyColumn(
@@ -22,10 +22,10 @@ fun ArtistsScreen(
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            items(artists.size) { index ->
+            items(artistsWithDetails.size) { index ->
                 ArtistItem(
-                    artist = artists[index],
-                    onClick = { onNavigateToArtistDetail(artists[index].id) }
+                    artistWithDetails = artistsWithDetails[index],
+                    onClick = { onNavigateToArtistDetail(artistsWithDetails[index].artist.id) }
                 )
             }
         }

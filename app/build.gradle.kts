@@ -54,7 +54,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.media3.common.ktx)
     implementation(libs.androidx.media3.exoplayer)
-    implementation(libs.androidx.navigation.compose.jvmstubs)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,4 +71,6 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     //exo player
     implementation(libs.androidx.media2.exoplayer)
+    //coil
+    implementation(libs.coil.compose)
 }
