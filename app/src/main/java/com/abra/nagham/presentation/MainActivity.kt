@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.abra.nagham.presentation.main.NaghamApp
+import com.abra.nagham.presentation.permissions.PermissionHandler
 import com.abra.nagham.presentation.ui.theme.NaghamTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,8 +19,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NaghamTheme {
-                Scaffold {
-                    NaghamApp(modifier = Modifier.padding(it))
+                PermissionHandler{
+                    Scaffold {
+                        NaghamApp(modifier = Modifier.padding(it))
+                    }
                 }
             }
         }

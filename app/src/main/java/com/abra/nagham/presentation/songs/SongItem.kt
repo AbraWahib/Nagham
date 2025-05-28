@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.abra.nagham.data.util.formatDuration
+import com.abra.nagham.util.formatDuration
 import com.abra.nagham.domain.model.music.Song
 import com.abra.nagham.domain.model.music.SongWithArtist
 import com.abra.nagham.presentation.ui.theme.NaghamTheme
