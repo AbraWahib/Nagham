@@ -8,6 +8,8 @@ interface PlaybackRepository {
     fun setMediaItems(mediaItems: List<PlaybackUseCase.MediaItem>)
     fun play()
     fun pause()
+    fun next()
+    fun previous()
     fun seekTo(position: Long)
     fun seekToIndex(index: Int)
     fun setShuffleMode(enable: Boolean)

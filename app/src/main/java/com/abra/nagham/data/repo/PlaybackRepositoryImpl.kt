@@ -1,6 +1,5 @@
 package com.abra.nagham.data.repo
 
-import androidx.media3.common.MediaItem as ExoMediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import com.abra.nagham.domain.model.playback.PlaybackState
@@ -14,6 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import androidx.media3.common.MediaItem as ExoMediaItem
 
 
 class PlaybackRepositoryImpl @Inject constructor(
@@ -46,6 +46,14 @@ class PlaybackRepositoryImpl @Inject constructor(
 
     override fun pause() {
         exoPlayer.pause()
+    }
+
+    override fun next() {
+        exoPlayer.seekToNext()
+    }
+
+    override fun previous() {
+        exoPlayer.seekToPrevious()
     }
 
     override fun seekTo(position: Long) {

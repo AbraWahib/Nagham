@@ -25,6 +25,13 @@ class PlaybackUseCase(
         playbackRepository.play()
     }
 
+    fun next(){
+        playbackRepository.next()
+    }
+    fun previous(){
+        playbackRepository.previous()
+    }
+
     fun play() {
         playbackRepository.play()
     }
